@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="catClickerApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="js/app-start.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>    
+    <div ng-controller="catClickerController as controller">            
+      <ul>
+        <li ng-repeat="cat in controller.cats" ng-click="controller.changeCat(cat)">
+          {{cat.name}}          
+        </li>
+      </ul>
+      <div id="cat">
+            <h2 id="cat-name">{{controller.currentCat.name}}</h2>
+            <div id="cat-count">{{controller.currentCat.clickCount}}</div>
+            <img id="cat-img" src="{{controller.currentCat.imgSrc}}" alt="cute cat" ng-click="controller.increaseClickCount()">
+        </div>
+    </div>
+  </body>
+</html>
